@@ -1,7 +1,8 @@
 @if (User.Identity.IsAuthenticated)
 {
   <div class="container">
-  @Html.ActionLink("Home", "Index", "Home")
+    <p>@Html.ActionLink("Home", "Index", "Home")</p>
+    <p>@Html.ActionLink("Add a treat", "Create", "Treats")</p>
 
   @using (Html.BeginForm("LogOff", "Accounts"))
     {
