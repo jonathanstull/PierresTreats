@@ -1,8 +1,9 @@
 @if (User.Identity.IsAuthenticated)
 {
   <div class="container">
-    <p>@Html.ActionLink("Home", "Index", "Home")</p>
-    <p>@Html.ActionLink("Add a treat", "Create", "Treats")</p>
+    <a class="footer-link">@Html.ActionLink("Home", "Index", "Home")</a>
+    <a class="footer-link">@Html.ActionLink("Add a treat", "Create", "Treats")</a>
+    <a class="footer-link">@Html.ActionLink("Add a flavor", "Create", "Flavors")</a>
 
   @using (Html.BeginForm("LogOff", "Accounts"))
     {
@@ -13,8 +14,8 @@
 else if (User.Identity.IsAuthenticated == false)
 {
   <div class="container">
-    <p>@Html.ActionLink("Home", "Index", "Home")</p>
-    <p>@Html.ActionLink("Register for an account", "Register", "Accounts")</p>
-    <p>@Html.ActionLink("Log in", "Login", "Accounts")</p>
+    <a class="footer-link">@Html.ActionLink("Home", "Index", "Home")</a>
+    <a class="footer-link">@Html.ActionLink("Register for an account", "Register", "Accounts")</a>
+    <a class="footer-link">@Html.ActionLink("Log in", "Login", "Accounts")</a>
   </div>
 }
