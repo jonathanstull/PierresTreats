@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace PierresTreats.Controllers
 {
-  public class AccountsController : Controller
+  public class AccountController : Controller
   {
     private readonly PierresTreatsContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountsController(PierresTreatsContext db, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+    public AccountController(PierresTreatsContext db, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
     {
       _db = db;
       _userManager = userManager;
