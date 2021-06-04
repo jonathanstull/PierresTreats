@@ -38,5 +38,13 @@ namespace PierresTreats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index", "Home");
     }
+
+    [AllowAnonymous]
+    public ActionResult Details(int id)
+    {
+      var thisFlavor = _db.Flavors
+          .FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
+    }
   }
 }

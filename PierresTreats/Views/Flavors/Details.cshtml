@@ -1,0 +1,28 @@
+@{ Layout = "_Layout"; }
+
+@model PierresTreats.Models.Flavor
+
+<h3>About @Html.DisplayFor(flavor => flavor.Type)</h3>
+
+<h4>@Html.DisplayNameFor(flavor => flavor.Type): @Html.DisplayFor(flavor => flavor.Type)</h4>
+
+@if (@Model.JoinFTEntities.Count == 0)
+{
+  <h4>This flavor is not associated with any treats.</h4>
+}
+else
+{
+  <h4>This flavor describes these treats:</h4>
+
+  <ul>
+    @foreach (var join in Model.JoinFTEntities)
+    {
+      <li>@join.Treat.Name</li>
+    }
+  </ul>
+}
+
+@* <p>@Html.ActionLink("Connect this treat to a flavor", "AddFlavor", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Edit this treat", "Edit", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Delete this treat", "Delete", new { id = Model.TreatId })</p>
+*@
