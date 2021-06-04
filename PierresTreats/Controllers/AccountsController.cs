@@ -44,9 +44,13 @@ namespace PierresTreats.Controllers
       }
     }
 
-    // public ActionResult Login()
-    // {
+    public ActionResult Login()
+    {
+      return View();
+    }
 
-    // }
+    // Login POST route
+
+    // Logout POST route
   }
 }

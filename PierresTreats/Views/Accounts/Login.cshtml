@@ -1,0 +1,21 @@
+@{ Layout = "_Layout"; }
+
+@using PierresTreats.ViewModels
+@model LoginViewModel
+
+<h2>Log in</h2>
+
+@using (Html.BeginForm())
+{
+  <p>
+    @Html.LabelFor(m => m.UserName)
+    @Html.EditorFor(m => m.UserName)
+  </p>
+
+  <p>
+    @Html.LabelFor(m => m.Password)
+    @Html.EditorFor(m => m.Password)
+  </p>
+
+  <p><input type="submit" value="Log in" /></p>
+}
