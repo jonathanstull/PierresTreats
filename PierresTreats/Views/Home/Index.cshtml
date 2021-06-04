@@ -1,5 +1,35 @@
 @{ Layout = "_Layout"; }
 
+@using PierresTreats.Models
+@model IEnumerable<PierresTreats.Models.Treat>
+
 <h3>Treats</h3>
 
+@if (Model.Any())
+{
+  <ul>
+  @foreach (Treat treat in Model)
+  {
+    <li>@Html.ActionLink($"{treat.Name}", "Details", "Treats", new { id = treat.TreatId })</li>
+  }
+  </ul>
+}
+else
+{
+  <p>No treats have been added.</p>
+}
+
 <h3>Flavors</h3>
+
+@if (Model.Any())
+{
+  <ul>
+  @foreach (Treat treat in Model)
+  {
+    @foreach (var join in treat.JoinFTEntities)
+    {
+      <li>@Html.ActionLink($"{join.Flavor.Type}", "Details", "Flavors", new { id = join.Flavor.FlavorId })</li>
+    }
+  }
+  </ul>
+}
