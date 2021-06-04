@@ -22,10 +22,10 @@ namespace PierresTreats.Controllers
       return View();
     }
     
-    // public ActionResult Register()
-    // {
-
-    // }
+    public IActionResult Register()
+    {
+      return View();
+    }
 
     // public ActionResult Login()
     // {
