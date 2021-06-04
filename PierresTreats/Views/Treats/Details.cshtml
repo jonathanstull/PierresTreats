@@ -4,7 +4,23 @@
 
 <h3>About @Html.DisplayFor(treat => treat.Name)</h3>
 
-<p>@Html.DisplayNameFor(treat => treat.Name): @Html.DisplayFor(treat => treat.Name)</p>
+<h4>@Html.DisplayNameFor(treat => treat.Name): @Html.DisplayFor(treat => treat.Name)</h4>
+
+@if (@Model.JoinFTEntities.Count == 0)
+{
+  <h4>This treat is not associated with any flavors.</h4>
+}
+else
+{
+  <h4>This treat has these flavors:</h4>
+
+  <ul>
+    @foreach (var join in Model.JoinFTEntities)
+    {
+      <li>@join.Flavor.Type</li>
+    }
+  </ul>
+}
 
 <p>@Html.ActionLink("Connect this treat to a flavor", "AddFlavor", new { id = Model.TreatId })</p>
 <p>@Html.ActionLink("Edit this treat", "Edit", new { id = Model.TreatId })</p>
