@@ -1,11 +1,16 @@
+body {
+  margin: 100px;
+}
+
 body header {
   width: 100%;
   position: fixed;
   height: 100px;
   margin: auto;
+  display: block;
   top: 0px;
   left: 0px;
-  background-color: #BFA4A4;
+  background-color: #E3B9BC;
 }
 
 body footer {
@@ -15,6 +20,6 @@ body footer {
   margin: auto;
   bottom: 0px;
   left: 0px;
-  background-color: #BFA4A4;
+  background-color: #E3B9BC;
 }
 /*# sourceMappingURL=global.css.map */
