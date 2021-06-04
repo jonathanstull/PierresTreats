@@ -49,7 +49,19 @@ namespace PierresTreats.Controllers
       return View();
     }
 
-    // Login POST route
+    [HttpPost]
+    public async Task<ActionResult> Login(LoginViewModel model)
+    {
+      Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: true, lockoutOnFailure: false);
+      if (result.Succeeded)
+      {
+        return RedirectToAction("Index");
+      }
+      else
+      {
+        return RedirectToAction("Index");
+      }
+    }
 
     // Logout POST route
   }
