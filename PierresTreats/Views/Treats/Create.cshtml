@@ -1,0 +1,15 @@
+@{ Layout = "_Layout"; }
+
+@model PierresTreats.Models.Treat
+
+<h3>Add a new treat</h3>
+
+@using (Html.BeginForm())
+{
+  <p>
+    @Html.LabelFor(treat => treat.Name)
+    @Html.EditorFor(treat => treat.Name)
+  </p>
+
+  <p><input type="submit" value="Add treat" /></p>
+}
