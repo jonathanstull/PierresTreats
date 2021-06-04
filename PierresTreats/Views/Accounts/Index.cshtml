@@ -1,0 +1,15 @@
+@{ Layout = "_Layout"; }
+
+<h2>Accounts</h2>
+
+@if (User.Identity.IsAuthenticated)
+{
+  <h3>Welcome, @User.Identity.Name</h3>
+  
+  <p>You are logged in. If you have any questions or concerns related to your account, please <a href="mailto: pierre@pierrespatisserie.com">contact Pierre</a>.</p>
+}
+else
+{
+  <p>@Html.ActionLink("Register an account", "Register")</p>
+  <p>@Html.ActionLink("Log in", "Login")</p>
+}
