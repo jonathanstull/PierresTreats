@@ -58,5 +58,13 @@ namespace PierresTreats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index", "Home");
     }
+
+    public ActionResult Delete(int id)
+    {
+      var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
+      _db.Treats.Remove(thisTreat);
+      _db.SaveChanges();
+      return RedirectToAction("Index", "Home");
+    }
   }
 }

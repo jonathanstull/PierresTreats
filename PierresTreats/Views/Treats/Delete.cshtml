@@ -1,0 +1,10 @@
+@{ Layout = "_Layout"; }
+
+@model PierresTreats.Models.Treat
+
+<h3>Are you sure you want to delete @Html.DisplayFor(treat => treat.Name)?</h3>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Confirm" />
+}
