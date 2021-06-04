@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using PierresTreats.Models;
+using PierresTreats.ViewModels;
+using System.Threading.Tasks;
 
 namespace PierresTreats.Controllers
 {
@@ -25,6 +27,21 @@ namespace PierresTreats.Controllers
     public IActionResult Register()
     {
       return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Register (RegisterViewModel model)
+    {
+      var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+      IdentityResult result = await _userManager.CreateAsync(user, model.Password);
+      if (result.Succeeded)
+      {
+        return RedirectToAction("Index");
+      }
+      else
+      {
+        return RedirectToAction("Index");
+      }
     }
 
     // public ActionResult Login()

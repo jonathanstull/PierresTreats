@@ -5,11 +5,12 @@ namespace PierresTreats.ViewModels
   public class RegisterViewModel
   {
     [Required]
-    [Display(Name = "UserName")]
+    [Display(Name = "Username")]
     public string UserName { get; set; }
 
     [Required]
     [EmailAddress]
+    [Display(Name = "Email")]
     public string Email { get; set; }
 
     [Required]
