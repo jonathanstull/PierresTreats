@@ -8,6 +8,16 @@
 @using (Html.BeginForm("Register", "Accounts", FormMethod.Post))
 {
   <p>
+    @Html.LabelFor(user => user.FirstName)
+    @Html.EditorFor(user => user.FirstName)
+  </p>
+
+  <p>
+    @Html.LabelFor(user => user.LastName)
+    @Html.EditorFor(user => user.LastName)
+  </p>
+  
+  <p>
     @Html.LabelFor(user => user.UserName)
     @Html.EditorFor(user => user.UserName)
   </p>
