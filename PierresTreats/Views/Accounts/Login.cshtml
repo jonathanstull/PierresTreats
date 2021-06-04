@@ -8,13 +8,13 @@
 @using (Html.BeginForm())
 {
   <p>
-    @Html.LabelFor(m => m.UserName)
-    @Html.EditorFor(m => m.UserName)
+    @Html.LabelFor(user => user.UserName)
+    @Html.EditorFor(user => user.UserName)
   </p>
 
   <p>
-    @Html.LabelFor(m => m.Password)
-    @Html.EditorFor(m => m.Password)
+    @Html.LabelFor(user => user.Password)
+    @Html.EditorFor(user => user.Password)
   </p>
 
   <p><input type="submit" value="Log in" /></p>
