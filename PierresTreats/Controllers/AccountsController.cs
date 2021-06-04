@@ -33,15 +33,8 @@ namespace PierresTreats.Controllers
     public async Task<ActionResult> Register (RegisterViewModel model)
     {
       var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
-      IdentityResult result = await _userManager.CreateAsync(user, model.Password);
-      if (result.Succeeded)
-      {
-        return RedirectToAction("Index");
-      }
-      else
-      {
-        return RedirectToAction("Index");
-      }
+      await _userManager.CreateAsync(user, model.Password);
+      return RedirectToAction("Index");
     }
 
     public ActionResult Login()
@@ -52,15 +45,8 @@ namespace PierresTreats.Controllers
     [HttpPost]
     public async Task<ActionResult> Login(LoginViewModel model)
     {
-      Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: true, lockoutOnFailure: false);
-      if (result.Succeeded)
-      {
-        return RedirectToAction("Index");
-      }
-      else
-      {
-        return RedirectToAction("Index");
-      }
+      await _signInManager.PasswordSignInAsync(model.UserName, model.Password, isPersistent: true, lockoutOnFailure: false);
+      return RedirectToAction("Index");
     }
 
     [HttpPost]
